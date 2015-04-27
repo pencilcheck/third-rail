@@ -4,9 +4,11 @@ module DateSelect
     model :page
 
     def initialize
-      dp = Element.find('.volt-date-picker')
-      `dp.datepicker()`
-      nil
+      Document.ready? do
+        dp = Element.find('.volt-date-picker')
+        `dp.datepicker()`
+        nil
+      end
     end
 
   end
