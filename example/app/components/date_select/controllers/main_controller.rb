@@ -1,16 +1,12 @@
 module DateSelect
   class MainController < Volt::ModelController
 
-    def index
-      debugger
-      Document.ready? do
-        dp = Element.find('.volt-date-picker')
-        `dp.datepicker()`
-        nil
-      end
-    end
+    model :page
 
-    def select
+    def initialize
+      dp = Element.find('.volt-date-picker')
+      `dp.datepicker()`
+      nil
     end
 
   end
